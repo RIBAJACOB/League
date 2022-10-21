@@ -1,14 +1,13 @@
 package org.league;
 
 public class Team  implements Comparable<Team> {
-    String name;
-    int score;
-    int points;
+    private String name;
+    private int points;
+    private int position;
 
-    public Team(String name, int points, int score) {
+    public Team(String name, int points) {
         this.name = name;
         this.points = points;
-        this.score = score;
     }
 
     public Team() {
@@ -30,12 +29,12 @@ public class Team  implements Comparable<Team> {
     public void setPoints(int points) {
         this.points = points;
     }
-    public int getScore() {
-        return score;
+    public int getPosition() {
+        return position;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     @Override

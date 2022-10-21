@@ -3,6 +3,7 @@ package org.league;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -61,6 +62,18 @@ class LeagueTableTest {
         teamPoints = leagueTable.calculateTeamScores(matchResults);
 
         assertEquals(3,teamPoints.get("Snakes"));
+    }
+
+    @Test
+    void emptyLeagueTableTest(){
+        var leagueTable = new LeagueTable();
+        Map<String, Integer> teamPoints = new HashMap<>();
+        teamPoints.put("Lions",3);
+        teamPoints.put("Snakes",0);
+        teamPoints.put("Tigers",1);
+        List<Team>  teamList = leagueTable.updateLeagueTable(teamPoints);
+        assertFalse(teamList.isEmpty());
+
     }
 
 }
